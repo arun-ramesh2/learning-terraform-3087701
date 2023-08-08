@@ -43,12 +43,6 @@ resource "aws_instance" "blog" {
     Name = "HelloWorld"
   }
 }
-resource "aws_security_group" "blog" {
-  name        = "blog"
-  description = "AWS security tab"
-  
-  vpc_id = data.aws_vpc.default.id
-}
 
 module "blog_sg" {
   source  = "terraform-aws-modules/security-group/aws"
